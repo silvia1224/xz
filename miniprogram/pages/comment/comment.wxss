@@ -1,0 +1,60 @@
+/* pages/comment/comment.wxss */
+.detail-container{
+  height:400rpx;/*背景高度*/
+  opacity:.9;/*透明度*/
+  filter:blur(40rpx);/*滤镜 高斯模糊*/
+}
+/*2.遮罩层*/
+.detail-mask{
+  width:100%;/*遮罩层宽度填满了父元素*/
+  height:400rpx;/*高度同上*/
+  background: #333333;
+  position: absolute;
+  top:0;left:0;/*左侧顶端0*/
+  z-index:-1;/*显示在模糊图片底层*/
+}
+/*3.电影详情列表*/
+.detail-info{
+  position:absolute;  /*相对定位*/
+  top:0;left:0;
+  width:100%;
+  height:400rpx;display: flex; /*弹性布局默认水平*/
+  padding:20rpx;
+}
+/* 4.左侧图片 */
+.detail-img{
+  width:280rpx; /*调整图片宽高*/
+  height:90%;
+  margin-right:24rpx;/*右侧间距 文字*/
+}
+/* 右侧区域 介绍电影内容 */
+.detail{
+  line-height: 50rpx;/*行高*/
+}
+.detail view{ /*电影介绍类文字*/
+  color:#fff;
+  font-size:24rpx;
+}
+/* 右侧电影评分 */
+.detail .detail-sc{ /*电影分数*/
+  color:#fc0;
+  font-size:32rpx;
+}
+/* 电影标题 */
+.detail-nm{
+   font-size:42rpx !important;
+   margin-bottom:20rpx;
+
+}
+/* 电影描述 */
+.desc{
+  color:#555;
+  font-size:24rpx;
+  padding:20rpx;
+}
+/* 上传预览图片 */
+.comment-img{
+  width:200rpx; /*显示正方形图片*/
+  height:200rpx;
+  margin-right:10rpx;
+}

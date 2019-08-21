@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/comment/comment",
+    "pages/map/map",
+    "pages/profile/profile",
+    "pages/mymovie/mymovie"
+   
+
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "XZ 电影商城",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "电影",
+        "iconPath": "images/dianying.png",
+        "selectedIconPath": "images/dianying_s.png"
+      },
+      {
+      "pagePath": "pages/mymovie/mymovie",
+      "text": "娱乐",
+      "iconPath": "images/mymovie.png",
+      "selectedIconPath": "images/mymovie_s.png"
+     },
+     {
+      "pagePath": "pages/map/map",
+      "text": "地图",
+      "iconPath": "images/ditu.png",
+      "selectedIconPath": "images/ditu_s.png"
+    },
+    {
+      "pagePath": "pages/profile/profile",
+      "text": "个人中心",
+      "iconPath": "images/gerenzhongxin.png",
+      "selectedIconPath": "images/gerenzhongxin_s.png"
+    }
+    ]
+  }
+}

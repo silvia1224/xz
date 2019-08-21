@@ -1,0 +1,15 @@
+<!--pages/profile/profile.wxml-->
+<!-- <text>pages/profile/profile.wxml</text> -->
+<view class="profile">
+  <view class="profile-img">
+  <!-- 获取当前组件头像 -->
+  <!-- open-data 组件类型 -->
+     <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <!-- 获取当前组件昵称 -->
+  <!-- open-data 组件类型 -->
+  <view class="profile-name">
+     <open-data type="userNickName"></open-data>
+  </view>
+</view>
+<button open-type="getUserInfo" bindtap="getUser">获取用户信息</button>

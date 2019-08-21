@@ -1,0 +1,22 @@
+<!--pages/mymovie/mymovie.wxml-->
+<!-- <text>pages/mymovie/mymovie.wxml</text> -->
+<view class="movielist">
+   <image src="/images/nz.jpg"></image>
+   <text>哪吒</text>
+   <image src="/images/nz.jpg"></image>
+   <text>哪吒</text>
+</view>
+<view class="user_view">
+   <!-- 输入框输入你喜欢电影文字 -->
+   <van-field
+    value="{{content}}"
+    placeholder="电影观后感..."
+    bind:change="onContentChange"
+   />
+   <!-- 按钮 上传图片 1张 -->
+   <van-button type="primary" size="small" bindtap="myupload">上传图片</van-button>
+   <!-- 上传图片预览区域 -->
+   <view></view>
+   <!-- 按钮 提交按钮 -->
+   <van-button type="danger" size="large" bindtap="mysubmit">提交</van-button>
+</view>
