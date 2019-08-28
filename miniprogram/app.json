@@ -22,28 +22,28 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "电影",
+        "text": "娱乐",
         "iconPath": "images/dianying.png",
         "selectedIconPath": "images/dianying_s.png"
       },
       {
+        "pagePath": "pages/map/map",
+        "text": "地图",
+        "iconPath": "images/ditu.png",
+        "selectedIconPath": "images/ditu_s.png"
+      },
+      {
       "pagePath": "pages/mymovie/mymovie",
-      "text": "娱乐",
+      "text": "我喜欢",
       "iconPath": "images/mymovie.png",
       "selectedIconPath": "images/mymovie_s.png"
-     },
+     }, 
      {
-      "pagePath": "pages/map/map",
-      "text": "地图",
-      "iconPath": "images/ditu.png",
-      "selectedIconPath": "images/ditu_s.png"
-    },
-    {
       "pagePath": "pages/profile/profile",
       "text": "个人中心",
       "iconPath": "images/gerenzhongxin.png",
       "selectedIconPath": "images/gerenzhongxin_s.png"
-    }
+     }
     ]
   }
 }

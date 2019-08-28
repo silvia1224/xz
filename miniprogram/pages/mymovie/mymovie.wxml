@@ -16,7 +16,9 @@
    <!-- 按钮 上传图片 1张 -->
    <van-button type="primary" size="small" bindtap="myupload">上传图片</van-button>
    <!-- 上传图片预览区域 -->
-   <view></view>
+   <view class="imagelist">
+      <image src="{{image}}" style="width:200rpx;height:200rpx;"></image>
+   </view>
    <!-- 按钮 提交按钮 -->
    <van-button type="danger" size="large" bindtap="mysubmit">提交</van-button>
 </view>

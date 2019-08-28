@@ -9,7 +9,7 @@ exports.main=async(event,context)=>{
     //2.1返回函数：向豆瓣发送请求
   var url =`http://api.douban.com/v2/movie/in_theaters`;
   url +=`?apikey=0df993c66c0c636e29ecbb5344252a4a`;
-  url +=`&start=${event.count}&count=`;
+  url +=`&start=${event.start}&count=`;
   url += `${event.count}`;
     //2.2返回函数结果
     return rp(url).then(res=>{ //发送请求 豆瓣

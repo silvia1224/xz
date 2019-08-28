@@ -5,8 +5,8 @@
 <!--scale 缩放 show-location 是否显示-->
 <!--style 地图样式-->
 <map id="map" 
-longitude="116.300901"
-latitude="39.916085"
+longitude="120.181887"
+latitude="30.248804"
 scale="14"
 style="width:100%;height:600rpx"
 show-location="true"

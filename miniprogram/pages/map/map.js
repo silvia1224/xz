@@ -5,30 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    myshow:true,
     polyline:[{//多个线段
       points:[
         {
-        longitude:116.300901,
-        latitude:39.916085
+          longitude: 120.181887,
+          latitude: 30.248804
         },
         {
-        longitude: 116.200906,
-        latitude: 39.816000
+          longitude: 120.181660,
+          latitude: 30.248012
         }
       ],
       color:"#000",
       width:10,
     }],
-    controls:[{//控件
+   /* controls:[{//控件
       id:0,
       iconPath:"/images/nz.jpg",
-      position:{
-        left:260,
+      position:{//控件位置
+        left:260,//控件左位置 顶端位置
         top:250-50,
-        width:50,
+        width:50,//控件宽度和高度
         height:50 
       }
     }]
+    */
   },
 
   /**

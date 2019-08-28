@@ -13,7 +13,7 @@ Page({
     //功能：用户点击详情按钮跳转comment组件，注意：comment组件不能添加tabbar中，否则跳转失败
     //获取自定义属性id
     var id=event.target.dataset.id;
-    console.log(id);
+    //console.log(id);
     //跳转comment组件并且传递参数id
     var url="/pages/comment/comment?id="+id;
     wx.navigateTo({//保留跳转：保留原先组件跳转新组件
@@ -23,6 +23,9 @@ Page({
     //   url: url,
     // })
   },
+  onLoad: function (options) {
+    this.loadMore();
+  },
   loadMore:function(){
     //功能：调用云函数并且传递参数
     wx.cloud.callFunction({
@@ -31,23 +34,21 @@ Page({
       name:"movie-list-1904",//云函数名
       data: {//向云函数传递参数
         start:this.data.list.length,//起始行
-        count:0  //当前页一共几行
+        count:4  //当前页一共几行
       }
     }).then(res=>{ //调用成功
       //3.获取云函数返回数据保存list
       //console.log(res.result);//返回结果是json string
       //json string ->js obj 保存
-      var obj=JSON.parse(res.result);
-      //console.log(obj)
-      //保存电影列表数据
-      var rows=obj.subjects;//第一页
-      //将电影列表数组拼接操作
-      rows=this.data.list.concat(rows);//第二页
+      var rows = JSON.parse(res.result);
+      //console.log(rows)
+      //保存电影列表数据list
+      var list2 = this.data.list.concat(rows.subjects);//第二页
       //拼接后结果 保存起来
       this.setData({
-        list:rows
-      });
-      console.log(rows)
+        list:list2
+      })
+      //console.log(list2)
     }).catch(err=>{ //调用失败
       console.log(err); //失败原因
     })
@@ -55,9 +56,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.loadMore();
-  },
+ 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -98,9 +97,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    //console.log(123)
     //发送请求下载下一页数据
     this.loadMore();
+    //console.log(123);
   },
 
   /**
