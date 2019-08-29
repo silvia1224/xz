@@ -1,6 +1,7 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
 <!-- 一部电影区域 -->
+<swiper id='swiper'/>
 <view class="movie" wx:for="{{list}}" wx:key="index">
   <!-- 电影图片 左侧 -->
   <image class="movie-img" src="{{item.images.small}}">
@@ -13,15 +14,17 @@
     </view>
     <!-- 电影介绍 观众评分   右侧 -->
     <view class="movie-score">
-       <text>{{item.rating.average}}</text>
+       <text>评分 {{item.rating.average}}</text>
     </view>
     <!-- 电影介绍 主演   右侧 -->
     <view>主演：
        <text wx:for="{{item.casts}}" wx:key="index">{{item.name}} </text>
-    </view>
-    <!-- 电影介绍 年份    右侧 -->
-    <view>年份：{{item.year}}</view>
-    <!-- 电影介绍 详情按钮  右侧 -->
-    <button bindtap="jumpComment" class="movie-comment" data-id="{{item.id}}">详情</button>
+    </view>  
+    <view class="movie-btn"> 
+       <!-- 电影介绍 年份    右侧 -->
+       <text> 年份：{{item.year}}</text>
+       <!-- 电影介绍 购票按钮  右侧 -->
+       <button bindtap="jumpComment" class="movie-comment" data-id="{{item.id}}">评论</button>
+    </view> 
   </view>
 </view>

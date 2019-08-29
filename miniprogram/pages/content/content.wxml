@@ -1,0 +1,47 @@
+<!--pages/content/content.wxml-->
+<!-- <text>电影评论</text> -->
+<view>
+   <!-- 电影图片  模糊-->
+   <view class="detail-container" style="background:url({{detail.images.large}}) no-repeat ">
+   </view>
+   <!-- 电影图片  遮罩-->
+   <view class="detail-mask"></view>
+   <view class="detail-info">
+   <!-- 电影图片  介绍-->
+   <image src="{{detail.images.large}}" class="detail-img"></image>
+   <!-- 左侧电影图片-->
+      <!-- 右侧电影文字介绍-->
+      <view class="detail">
+         <!-- 右侧电影 标题-->
+         <view class="detail-nm">{{detail.title}}</view>
+         <!-- 右侧电影 评分-->
+         <view class="detail-sc">评分：{{detail.rating.average}}</view>
+         <!-- 右侧电影 导演-->
+         <view>导演：{{detail.directors[0].name}}</view>
+         <!-- 右侧电影 类型-->
+         <view>类型：{{detail.genres}}</view>
+         <!-- 右侧电影 国家/时长-->
+         <view>{{detail.countries[0]}} / {{detail.durations}}</view>
+         <view>上映时间：{{detail.pubdates[1]}}</view>
+         <view>想看：{{detail.wish_count}}</view>
+         
+      </view>
+    </view>
+    <!-- 电影短评 -->
+    <!-- 电影名称 -->
+   <view class="detail-name">{{detail.title}}的短评 .... <text>全部{{detail.popular_comments.length}}条</text></view>
+   <!-- 用户评论 -->
+   <view class="user-comment" wx:for="{{detail.popular_comments}}" wx:key="index">
+      <!-- 用户id -->
+      <text>用户:{{detail.popular_comments[index].author.uid}} </text>
+      <!-- 用户评分 -->
+       <text> 评分:{{detail.popular_comments[index].rating.value}}分 </text>
+       <!-- 发表评论时间 -->
+       <text> 时间:{{detail.popular_comments[index].created_at}}</text>  
+       <!-- 评语 -->
+       <view class="content">{{detail.popular_comments[index].content}}</view>
+   </view>
+   
+  
+
+</view>

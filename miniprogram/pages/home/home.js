@@ -10,7 +10,7 @@ Page({
     list: [] //电影列表
   },
   jumpComment:function(event){//自定义属性需要获得对象中方法和属性需要用event事件对象
-    //功能：用户点击详情按钮跳转comment组件，注意：comment组件不能添加tabbar中，否则跳转失败
+    //功能：用户点击评价按钮跳转comment组件，注意：comment组件不能添加tabbar中，否则跳转失败
     //获取自定义属性id
     var id=event.target.dataset.id;
     //console.log(id);
@@ -41,7 +41,7 @@ Page({
       //console.log(res.result);//返回结果是json string
       //json string ->js obj 保存
       var rows = JSON.parse(res.result);
-      //console.log(rows)
+      console.log(rows)
       //保存电影列表数据list
       var list2 = this.data.list.concat(rows.subjects);//第二页
       //拼接后结果 保存起来

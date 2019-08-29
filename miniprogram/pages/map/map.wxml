@@ -4,6 +4,8 @@
 <!--longitude 经度 latitude 纬度-->
 <!--scale 缩放 show-location 是否显示-->
 <!--style 地图样式-->
+<navbar id='navbar'/>
+<swiper id='swiper'/>
 <map id="map" 
 longitude="120.181887"
 latitude="30.248804"

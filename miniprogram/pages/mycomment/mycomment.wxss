@@ -1,5 +1,4 @@
-/* pages/home/home.wxss */
-/* 一部电影区域 */
+/* pages/mycomment/mycomment.wxss */
 .movie{
   display: flex;/*弹性布局*/
   padding:10px; /*内边距*/
@@ -27,22 +26,3 @@
 .movie-score{
   color:#faaf00;
 }
-/* 右侧电影介绍 按钮 */
-.movie-btn{
-  position:relative;
-}
-.movie-comment{
-  height:50rpx;
-  width:100rpx;
-  position:absolute;
-  right:0;
-  top:0rpx;
-  padding:0;
-  line-height: 50rpx;
-  background: #e54847;
-  color:#fff;
-  border-radius: 40rpx;
-  font-size:24rpx;
-  margin-top:0rpx; /*与上面文字的间距*/
-}
-

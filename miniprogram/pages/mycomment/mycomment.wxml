@@ -1,0 +1,26 @@
+<!--pages/mycomment/mycomment.wxml-->
+<!-- <text>pages/mycomment/mycomment.wxml</text> -->
+<view class="movie" wx:for="{{detail}}" wx:key="index">
+  <!-- 电影图片 左侧 -->
+  <image class="movie-img" src="{{detail.images.small}}">
+  </image>
+  <!-- 电影介绍 右侧 -->
+  <view class="movie-info" wx:for="{{mycomments}}" wx:key="index">
+    <!-- 电影介绍 标题  右侧 -->
+    <view class="movie-title"> 
+      {{detail.title}}
+    </view>
+    <!-- 电影介绍 观众评分   右侧 -->
+    <view class="movie-score">
+       <text>评分 {{mycomments.score}}</text>
+    </view>
+    <!-- 电影介绍 主演   右侧 -->
+    <view>主演：
+       <text wx:for="{{detail.casts}}" wx:key="index">{{detail.name}} </text>
+    </view>  
+    <view class="movie-btn"> 
+       <!-- 电影介绍 年份    右侧 -->
+       <text> 年份：{{detail.year}}</text>
+    </view> 
+  </view>
+</view>

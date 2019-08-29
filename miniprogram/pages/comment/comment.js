@@ -5,17 +5,21 @@ const db=wx.cloud.database({
 });
 
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    content:"",       //输入框中显示的内容
-    score:0,          //用户评分
-    movieid:26794435, //当前电影id
-    detail:{},        //当前电影详细信息
-    image:[],         //保存用户选中图片（预览）
-    fileIds:[]        //保存上传图片fileID??         
+    content:"",        //输入框中显示的内容
+    score:0,           //用户评分
+    movieid:26794435,  //当前电影id
+    detail:{},         //当前电影详细信息
+    image:[],          //保存用户选中图片（预览）
+    fileIds:[]        //保存上传图片fileID??  
+    //title:"",          //电影标题
+    //pubdates:"",       //上映时间
+    //casts:[],          //主演
+   // images:"",        //电影主图 
+
   },
   submit:function(){
   //功能一：将选中图片上传云存储
@@ -75,10 +79,14 @@ Page({
      //fileIds 上传图片id列表
   db.collection("comment").add({
     data:{
-     content:this.data.conent,//留言
+     content:this.data.content,//留言
      score:this.data.score,//分享
      movieid:this.data.movieid, //电影id
      fileIds:this.data.fileIds //图片ids列表
+     //title:this.data.title,  //电影标题
+     //pubdates:this.data.pubdates, //电影上映时间
+     //casts:this.data.casts,//主演
+     //images:this.data.images.small  //电影图片
     }
   }).then(res=>{
     //成功回调函数 隐藏加载提示框 提示文字
@@ -86,12 +94,15 @@ Page({
     wx.showToast({
       title: '评论成功',
     })
+    wx.redirectTo({
+      url: '/pages/content/content',
+    })
   }).catch(err=>{
     //失败回调函数 隐藏加载提示框 提示文字
     wx.hideLoading();
     wx.showToast({
       title: '评论失败',
-    })
+    })  
   })
      
      
@@ -144,6 +155,7 @@ Page({
      this.setData({
        movieid:id
      })
+     //console.log(id);
      //3.加载新电影详情信息
      this.loadMore();
   },
@@ -151,7 +163,8 @@ Page({
     //组件创建成功后调用云函数显示当前电影列表
     //1.接收电影列表传递参数id
     var id=this.data.movieid;
-    console.log(id);
+    //console.log(id);
+    
     //2.显示数据加载提示框
     wx.showLoading({
       title:'加载中...',
@@ -170,6 +183,8 @@ Page({
       this.setData({
         detail:obj
       })
+      var details=obj;
+      wx.setStorageSync("mList", details)
       //7.隐藏加载提示框
      wx.hideLoading()
     }).catch(err=>{
